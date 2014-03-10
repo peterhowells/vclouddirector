@@ -25,3 +25,22 @@ This will be the client that will take in the url to hit and the auth header val
 
         response = self.request('POST', self.url, headers=headers, kwargs=req_kwargs)
         return response
+
+    def execute_delete(self, headers, payload=None):
+        """
+        DELETE the url provided
+        """
+        req_kwargs = dict({'data':payload})
+
+        response = self.request('DELETE', self.url, headers=headers, kwargs=req_kwargs)
+        return response
+
+    def execute_put(self, headers, payload=None):
+        """
+        PUT the url provided
+        """
+
+        req_kwargs = dict({'data':payload})
+
+        response = self.request("PUT", self.url, headers=headers, kwargs=req_kwargs)
+        return response
